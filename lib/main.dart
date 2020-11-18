@@ -16,43 +16,31 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget{
-  final items = List.generate(100, (i) => i).toList();
-
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Ma Sang Sook'),
-      ),
-      body:
-      ListView(
-        scrollDirection: Axis.vertical,
-        children: <Widget>[
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
-            trailing: Icon(Icons.navigate_next),
-            onTap: (){},
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Tab'),
+            bottom: TabBar(
+              tabs: <Widget>[
+                Tab(icon:Icon(Icons.tag_faces)),
+                Tab(text:'메뉴2'),
+                Tab(icon:Icon(Icons.info),text: '메뉴3'),
+              ],
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.event),
-            title: Text('Event'),
-            trailing: Icon(Icons.navigate_next),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: Icon(Icons.camera),
-            title: Text('Camera'),
-            trailing: Icon(Icons.navigate_next),
-            onTap: () {},
-          ),
-        ],
-      ),
+          body: TabBarView(
+              children: <Widget>[
+                Container(color: Colors.yellow,),
+                Container(color:Colors.orange,),
+                Container(color: Colors.red,),
+              ]),
 
 
 
-
+        ),
     );
   }
 
