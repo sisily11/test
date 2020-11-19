@@ -1,47 +1,61 @@
+
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+/// This is the main application widget.
 class MyApp extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fultter Demo',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MyHompage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget{
+class MyHompage extends StatelessWidget{
+
+
+
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Tab'),
-            bottom: TabBar(
-              tabs: <Widget>[
-                Tab(icon:Icon(Icons.tag_faces)),
-                Tab(text:'메뉴2'),
-                Tab(icon:Icon(Icons.info),text: '메뉴3'),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ma sang sook'),
+      ),
+      body:
+      Column(
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.red,
             ),
           ),
-          body: TabBarView(
-              children: <Widget>[
-                Container(color: Colors.yellow,),
-                Container(color:Colors.orange,),
-                Container(color: Colors.red,),
-              ]),
+          Expanded(
+            child: Container(
+              color: Colors.blue,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.yellow,
+            ),
+          ),
 
-
-
+          ],
         ),
-    );
-  }
+      );
 
+
+  }
 }
