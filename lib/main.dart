@@ -1,9 +1,9 @@
 
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
+
 
 /// This is the main application widget.
 class MyApp extends StatelessWidget {
@@ -16,46 +16,50 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHompage(),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHompage extends StatelessWidget{
+// ignore: must_be_immutable
 
 
-
-
+class MyHomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('ma sang sook'),
       ),
-      body:
-      Column(
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: Container(
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.blue,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.yellow,
-            ),
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
 
-          ],
+              TextField(
+              ),
+
+              TextField(
+                decoration: InputDecoration(
+                  labelText: '여기에 입력하세요',
+                ),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: '여기에 입력하세요',
+
+                ),
+              ),
+
+            ],
+          ),
         ),
-      );
+      ),
+    );
+  }
 
 
   }
-}
